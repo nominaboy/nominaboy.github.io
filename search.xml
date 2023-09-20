@@ -3,7 +3,8 @@
   <entry>
     <title>线性代数与变换</title>
     <url>/2023/09/19/GAMES101-1/</url>
-    <content><![CDATA[<p>向量<br>向量：没有绝对的起点，同时拥有方向和长度。<br>单位向量：长度为1，用来表示方向。<br>向量标准化：方向与原向量相同，长度为1。<br>向量相加：几何，平行四边形/三角形法则；代数，对应坐标相加。<br>向量相乘：<br>点乘：结果为标量，大小为|<strong>a</strong>||<strong>b</strong>|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）；主要应用：1. <strong>a</strong>向量在<strong>b</strong>向量上的投影；2. 向量夹角,丈量<strong>a</strong>向量和<strong>b</strong>向量方向多近，判断前方/后方。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/101.png" alt=""> </p>
+    <content><![CDATA[<h1 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h1><p>向量：没有绝对的起点，同时拥有方向和长度。<br>单位向量：长度为1，用来表示方向。<br>向量标准化：方向与原向量相同，长度为1。<br>向量相加：几何，平行四边形/三角形法则；代数，对应坐标相加。</p>
+<h4 id="向量相乘："><a href="#向量相乘：" class="headerlink" title="向量相乘："></a>向量相乘：</h4><h6 id="点乘："><a href="#点乘：" class="headerlink" title="点乘："></a>点乘：</h6><p>结果为标量，大小为|<strong>a</strong>||<strong>b</strong>|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）；主要应用：1. <strong>a</strong>向量在<strong>b</strong>向量上的投影；2. 向量夹角,丈量<strong>a</strong>向量和<strong>b</strong>向量方向多近，判断前方/后方。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/101.png" alt=""> </p>
 <p>叉乘：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/102.png" alt=""><br>结果为向量，大小为|<strong>a</strong>||<strong>b</strong>|sinθ，方向垂直于两个原向量，由左/右手定则确定（对应左/右手坐标系），不满足交换律（<strong>a</strong> x <strong>b</strong> = -<strong>b</strong> x <strong>a</strong>），坐标相乘见下<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/103.png" alt=""><br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/104.png" alt=""><br>主要应用：</p>
 <ol>
 <li>判断左右：<strong>a</strong> x <strong>b</strong>，结果向量方向为正/负来判断<strong>a</strong>位于<strong>b</strong>右/左（右手坐标系）。</li>
