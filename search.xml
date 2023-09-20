@@ -24,14 +24,15 @@
   <entry>
     <title>变换</title>
     <url>/2023/09/20/GAMES101-2/</url>
-    <content><![CDATA[<h2 id="2D变换"><a href="#2D变换" class="headerlink" title="2D变换"></a>2D变换</h2><p>缩放：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/201.png" alt=""><br>均匀缩放：Sx = Sy; 镜面对称（Y轴）：Sx = -1, Sy = 1<br>错切：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/202.png" alt=""> </p>
-<p><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/203.png" alt=""> </p>
+    <content><![CDATA[<h2 id="2D变换"><a href="#2D变换" class="headerlink" title="2D变换"></a>2D变换</h2><p>线性变换：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/200.png" alt=""><br>缩放：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/201.png" alt=""><br>均匀缩放：Sx = Sy; 镜面对称（Y轴）：Sx = -1, Sy = 1<br>错切：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/202.png" alt=""> </p>
+<p>旋转：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/203.png" alt=""><br>推导过程：针对旋转前后的图像右上点，逆时针旋转θ</p>
 <script type="math/tex; mode=display">
 x_r = (x_o - y_otan\theta)cos\theta
-    = x_ocos\theta - y_osin\theta
-
+    = x_ocos\theta - y_osin\theta</script><script type="math/tex; mode=display">
 y_r = x_rtan\theta + y_o/cos\theta 
-    = x_osin\theta + y_ocos\theta</script>]]></content>
+    = x_osin\theta + y_ocos\theta</script><p>平移（不属于线性变换）：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/204.png" alt=""> </p>
+<p>齐次坐标w：<br>点的w分量为1，向量的w分量为0。向量+向量=向量，点+向量=向量，点-点=向量，点+点=中点</p>
+]]></content>
       <tags>
         <tag>GAMES101</tag>
       </tags>
