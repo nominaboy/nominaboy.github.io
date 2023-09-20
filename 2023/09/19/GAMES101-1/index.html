@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="向量向量：没有绝对的起点，同时拥有方向和长度。单位向量：长度为1，用来表示方向。向量标准化：方向与原向量相同，长度为1。向量相加：几何，平行四边形&#x2F;三角形法则；代数，对应坐标相加。 向量相乘：点乘：结果为标量，大小为|a||b|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）；主要应用：1. a向量在b向量上的投影；2. 向量夹角,丈量a向">
+  <meta name="description" content="向量向量：没有绝对的起点，同时拥有方向和长度。单位向量：长度为1，用来表示方向。向量标准化：方向与原向量相同，长度为1。向量相加：几何，平行四边形&#x2F;三角形法则；代数，对应坐标相加。 向量相乘：点乘：结果为标量，大小为|a||b|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）主要应用：1. a向量在b向量上的投影；2. 向量夹角,丈量a向量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性代数与变换">
+<meta property="og:title" content="向量与线性代数">
 <meta property="og:url" content="http://example.com/2023/09/19/GAMES101-1/index.html">
 <meta property="og:site_name" content="Jeremy的技术随笔">
-<meta property="og:description" content="向量向量：没有绝对的起点，同时拥有方向和长度。单位向量：长度为1，用来表示方向。向量标准化：方向与原向量相同，长度为1。向量相加：几何，平行四边形&#x2F;三角形法则；代数，对应坐标相加。 向量相乘：点乘：结果为标量，大小为|a||b|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）；主要应用：1. a向量在b向量上的投影；2. 向量夹角,丈量a向">
+<meta property="og:description" content="向量向量：没有绝对的起点，同时拥有方向和长度。单位向量：长度为1，用来表示方向。向量标准化：方向与原向量相同，长度为1。向量相加：几何，平行四边形&#x2F;三角形法则；代数，对应坐标相加。 向量相乘：点乘：结果为标量，大小为|a||b|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）主要应用：1. a向量在b向量上的投影；2. 向量夹角,丈量a向量">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/101.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/102.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/107.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/108.png">
 <meta property="article:published_time" content="2023-09-19T08:57:37.000Z">
-<meta property="article:modified_time" content="2023-09-20T10:11:57.526Z">
+<meta property="article:modified_time" content="2023-09-20T10:14:21.507Z">
 <meta property="article:author" content="Jeremy Fang">
 <meta property="article:tag" content="GAMES101">
 <meta name="twitter:card" content="summary">
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>线性代数与变换 | Jeremy的技术随笔</title>
+  <title>向量与线性代数 | Jeremy的技术随笔</title>
   
 
 
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          线性代数与变换
+          向量与线性代数
         </h1>
 
         <div class="post-meta">
@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-20 18:11:57" itemprop="dateModified" datetime="2023-09-20T18:11:57+08:00">2023-09-20</time>
+                <time title="Modified: 2023-09-20 18:14:21" itemprop="dateModified" datetime="2023-09-20T18:14:21+08:00">2023-09-20</time>
               </span>
 
           
@@ -241,15 +241,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h1><p>向量：没有绝对的起点，同时拥有方向和长度。<br>单位向量：长度为1，用来表示方向。<br>向量标准化：方向与原向量相同，长度为1。<br>向量相加：几何，平行四边形/三角形法则；代数，对应坐标相加。</p>
-<h4 id="向量相乘："><a href="#向量相乘：" class="headerlink" title="向量相乘："></a>向量相乘：</h4><h6 id="点乘："><a href="#点乘：" class="headerlink" title="点乘："></a>点乘：</h6><p>结果为标量，大小为|<strong>a</strong>||<strong>b</strong>|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）；主要应用：1. <strong>a</strong>向量在<strong>b</strong>向量上的投影；2. 向量夹角,丈量<strong>a</strong>向量和<strong>b</strong>向量方向多近，判断前方/后方。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/101.png" alt=""> </p>
-<p>叉乘：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/102.png" alt=""><br>结果为向量，大小为|<strong>a</strong>||<strong>b</strong>|sinθ，方向垂直于两个原向量，由左/右手定则确定（对应左/右手坐标系），不满足交换律（<strong>a</strong> x <strong>b</strong> = -<strong>b</strong> x <strong>a</strong>），坐标相乘见下<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/103.png" alt=""><br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/104.png" alt=""><br>主要应用：</p>
+        <h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>向量：没有绝对的起点，同时拥有方向和长度。<br>单位向量：长度为1，用来表示方向。<br>向量标准化：方向与原向量相同，长度为1。<br>向量相加：几何，平行四边形/三角形法则；代数，对应坐标相加。</p>
+<h3 id="向量相乘："><a href="#向量相乘：" class="headerlink" title="向量相乘："></a>向量相乘：</h3><h4 id="点乘："><a href="#点乘：" class="headerlink" title="点乘："></a>点乘：</h4><p>结果为标量，大小为|<strong>a</strong>||<strong>b</strong>|cosθ。两个单位向量点乘结果为cosθ，满足乘法交换律，结合律，分配律，对应坐标相乘后相加（维度需相同）<br>主要应用：1. <strong>a</strong>向量在<strong>b</strong>向量上的投影；2. 向量夹角,丈量<strong>a</strong>向量和<strong>b</strong>向量方向多近，判断前方/后方。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/101.png" alt=""> </p>
+<h4 id="叉乘："><a href="#叉乘：" class="headerlink" title="叉乘："></a>叉乘：</h4><p><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/102.png" alt=""><br>结果为向量，大小为|<strong>a</strong>||<strong>b</strong>|sinθ，方向垂直于两个原向量，由左/右手定则确定（对应左/右手坐标系），不满足交换律（<strong>a</strong> x <strong>b</strong> = -<strong>b</strong> x <strong>a</strong>），坐标相乘见下<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/103.png" alt=""><br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/104.png" alt=""><br>主要应用：</p>
 <ol>
 <li>判断左右：<strong>a</strong> x <strong>b</strong>，结果向量方向为正/负来判断<strong>a</strong>位于<strong>b</strong>右/左（右手坐标系）。</li>
 <li>判断内外：P点一直在三条边某一边。<strong>AB</strong>x<strong>AP</strong>，<strong>BC</strong>x<strong>BP</strong>，<strong>CA</strong>x<strong>CP</strong>，三者结果向量方向相同则P在三角形内部。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/105.png" alt=""></li>
 <li>坐标系：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/106.png" alt=""> </li>
 </ol>
-<p>矩阵<br>矩阵叉乘矩阵：（列数）A矩阵 =（行数）B矩阵：(M x <em>N</em>) (<em>N</em> x P) = (M x P)。结果矩阵的第i行 第j列元素为 A第i行所有元素和B第j列所有元素乘积之和。不满足交换律。<br>矩阵叉乘向量：一般来说，矩阵左乘列向量，矩阵右乘行向量。（向量点积矩阵形式：（1 x N）(N x 1)）<br>矩阵转置：交换行列(ij -&gt; ji)。<img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/107.png" alt=""><br>单位矩阵、逆： <img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/108.png" alt=""></p>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>矩阵叉乘矩阵：（列数）A矩阵 =（行数）B矩阵：(M x <em>N</em>) (<em>N</em> x P) = (M x P)。结果矩阵的第i行 第j列元素为 A第i行所有元素和B第j列所有元素乘积之和。不满足交换律。<br>矩阵叉乘向量：一般来说，矩阵左乘列向量，矩阵右乘行向量。（向量点积矩阵形式：（1 x N）(N x 1)）<br>矩阵转置：交换行列(ij -&gt; ji)。<img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/107.png" alt=""><br>单位矩阵、逆： <img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/108.png" alt=""></p>
 
     </div>
 
@@ -323,7 +323,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9B%B8%E4%B9%98%EF%BC%9A"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">向量相乘：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%82%B9%E4%B9%98%EF%BC%9A"><span class="nav-number">1.0.0.1.0.1.</span> <span class="nav-text">点乘：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9B%B8%E4%B9%98%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">向量相乘：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%82%B9%E4%B9%98%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">点乘：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%89%E4%B9%98%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">叉乘：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">2.</span> <span class="nav-text">矩阵</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
