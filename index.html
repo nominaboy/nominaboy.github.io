@@ -257,7 +257,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/09/20/GAMES101-2/" class="post-title-link" itemprop="url">变换（Transformation）</a>
+            <a href="/2023/09/20/GAMES101-2/" class="post-title-link" itemprop="url">空间变换（Transformation）</a>
         </h2>
 
         <div class="post-meta">
@@ -274,7 +274,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-21 12:32:31" itemprop="dateModified" datetime="2023-09-21T12:32:31+08:00">2023-09-21</time>
+                <time title="Modified: 2023-09-21 14:35:45" itemprop="dateModified" datetime="2023-09-21T14:35:45+08:00">2023-09-21</time>
               </span>
 
           
@@ -303,8 +303,9 @@ y_r = x_rtan\theta + y_o/cos\theta
 <h3 id="正交投影"><a href="#正交投影" class="headerlink" title="正交投影"></a>正交投影</h3><p>先平移（中心-&gt;原点），再缩放（L/D/H-&gt;[-1,1]<sup>3</sup>(长宽高为2的正方体)）。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/215.png" alt=""> </p>
 <ul>
 <li>摄像机方向为-Z -&gt; n&gt;f</li>
-<li>注意平台差异<h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3>各个领域中更普遍适用，近大远小，平行线不再平行。<br><strong>压缩至长方体</strong> -&gt; 平移 -&gt; 缩放 (参考正交投影)<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/216.png" alt=""><br>压缩推导过程：</li>
+<li>注意平台差异</li>
 </ul>
+<h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3><p>各个领域中更普遍适用，近大远小，平行线不再平行。<br><strong>压缩至长方体</strong> -&gt; 平移 -&gt; 缩放 (参考正交投影)<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/216.png" alt=""><br>压缩推导过程：</p>
 <ol>
 <li><p>$\forall z 有 x’=n/z<em>x 和 y’=n/z</em>y$</p>
 <script type="math/tex; mode=display">M_p \begin{bmatrix}x \\ y \\ z \\ 1 \end{bmatrix} = \begin{bmatrix}x' \\ y' \\ ? \\ 1 \end{bmatrix} = \begin{bmatrix}nx \\ ny \\ ? \\ z \end{bmatrix}(同乘z，w只与z有关)</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">M_p =  \begin{bmatrix}n & 0 & 0 & 0 \\ 
@@ -322,7 +323,14 @@ y_r = x_rtan\theta + y_o/cos\theta
                  0 & 0 & A & B \\ 
                  0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix}0 \\ 0 \\ f \\ 1 \end{bmatrix} = \begin{bmatrix}0 \\ 0 \\ f^2 \\ f \end{bmatrix}</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">Af+B=f^2 \tag{2}</script></li>
 </ol>
-<p>$(1)(2)联立，可得A=n+f,B=-nf$   </p>
+<p>$(1)(2)联立，可得A=n+f,B=-nf$<br>Asepct ratio和Fov转为lrbt：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/217.png" alt=""><br>假设对称，l = -r，b = -t。非对称时为 $(t-b)/2|n|$ 和 $(r-l)/(t-b)$</p>
+<h2 id="屏幕映射"><a href="#屏幕映射" class="headerlink" title="屏幕映射"></a>屏幕映射</h2><p>裁剪空间（左） -&gt; 屏幕空间（左）<br>屏幕：像素的数组，数组的规模就是分辨率。屏幕的范围是$(0,0)到(width,height)$<br>像素：可近似的认为是一个有着统一颜色的方块。像素的坐标均为整数，从$(0,0)到(width-1,height-1)$。像素点$(x,y)$的中心是$(x+0.5,y+0.5)$。</p>
+<p><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/218.png" alt=""><br>标准的立方体映射到屏幕：</p>
+<ol>
+<li>与z无关</li>
+<li>$xy平面内[-1,1]^2到[0,width] * [0,height]$</li>
+<li>视口转换矩阵：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/219.png" alt=""> </li>
+</ol>
 
       
     </div>
