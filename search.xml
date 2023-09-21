@@ -15,7 +15,7 @@
 <li>判断内外：P点一直在三条边某一边。<strong>AB</strong>x<strong>AP</strong>，<strong>BC</strong>x<strong>BP</strong>，<strong>CA</strong>x<strong>CP</strong>，三者结果向量方向相同则P在三角形内部。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/105.png" alt=""></li>
 <li>坐标系：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/106.png" alt=""> </li>
 </ol>
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>矩阵叉乘矩阵：（列数）A矩阵 =（行数）B矩阵：(M x <em>N</em>) (<em>N</em> x P) = (M x P)。结果矩阵的第i行 第j列元素为 A第i行所有元素和B第j列所有元素乘积之和。不满足交换律。<br>矩阵叉乘向量：一般来说，矩阵左乘列向量，矩阵右乘行向量。（向量点积矩阵形式：（1 x N）(N x 1)）<br>矩阵转置：交换行列(ij -&gt; ji)。<img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/107.png" alt=""><br>单位矩阵、逆： <img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/108.png" alt=""></p>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>矩阵叉乘矩阵：（列数）A矩阵 =（行数）B矩阵：(M x <em>N</em>) (<em>N</em> x P) = (M x P)。结果矩阵的第i行 第j列元素为 A第i行所有元素和B第j列所有元素乘积之和。不满足交换律。<br>矩阵叉乘向量：一般来说，矩阵左乘列向量，矩阵右乘行向量。（向量点积矩阵形式：（1 x N）(N x 1)）<br>矩阵转置：交换行列(ij -&gt; ji)。<img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/107.png" alt=""><br>单位矩阵、逆：矩阵的逆可用于表示逆变换 <img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/108.png" alt=""></p>
 ]]></content>
       <tags>
         <tag>GAMES101</tag>
@@ -31,7 +31,9 @@ x_r = (x_o - y_otan\theta)cos\theta
     = x_ocos\theta - y_osin\theta</script><script type="math/tex; mode=display">
 y_r = x_rtan\theta + y_o/cos\theta 
     = x_osin\theta + y_ocos\theta</script><p>平移（不属于线性变换）：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/204.png" alt=""> </p>
-<p>齐次坐标w：<br>点的w分量为1，向量的w分量为0。向量+向量=向量，点+向量=向量，点-点=向量，点+点=中点</p>
+<p>齐次坐标w：<br>点的w分量为1，向量的w分量为0。向量+向量=向量，点+向量=向量，点-点=向量，点+点=中点。仿射变换=线性变换+平移变换。加入齐次坐标后的部分仿射变换矩阵：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/205.png" alt=""> </p>
+<p>变换组合：<br>变换矩阵不可左右互换（<del>交换律</del>），矩阵从右往左应用（列向量），多个变换矩阵可提前相乘为一个变换矩阵（结合律）</p>
+<h2 id="3D变换"><a href="#3D变换" class="headerlink" title="3D变换"></a>3D变换</h2><p>仿射变换通用矩阵：（表示<strong>先线性变换再平移</strong>）<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/206.png" alt=""><br>缩放：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/207.png" alt=""><br>平移：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/208.png" alt=""><br>旋转：<br>绕X/Y/Z轴旋转$\alpha$<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/209.png" alt=""><br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/210.png" alt=""> </p>
 ]]></content>
       <tags>
         <tag>GAMES101</tag>
