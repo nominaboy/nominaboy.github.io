@@ -25,17 +25,40 @@
     <title>变换</title>
     <url>/2023/09/20/GAMES101-2/</url>
     <content><![CDATA[<h2 id="模型变换（Model-Transformation）"><a href="#模型变换（Model-Transformation）" class="headerlink" title="模型变换（Model Transformation）"></a>模型变换（Model Transformation）</h2><p>（以Unity为例）模型空间（左） -&gt; 世界空间（左）</p>
-<h3 id="2D变换"><a href="#2D变换" class="headerlink" title="2D变换"></a>2D变换</h3><p>线性变换：<br><img src="[picUrl]" alt=""><br>缩放：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/201.png" alt=""><br>均匀缩放：Sx = Sy; 镜面对称（Y轴）：Sx = -1, Sy = 1<br>错切：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/202.png" alt=""> </p>
+<h3 id="2D变换"><a href="#2D变换" class="headerlink" title="2D变换"></a>2D变换</h3><p>线性变换：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/200.png" alt=""><br>缩放：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/201.png" alt=""><br>均匀缩放：Sx = Sy; 镜面对称（Y轴）：Sx = -1, Sy = 1<br>错切：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/202.png" alt=""> </p>
 <p>旋转：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/203.png" alt=""><br>推导过程：针对旋转前后的图像右上点，逆时针旋转θ</p>
 <script type="math/tex; mode=display">
 x_r = (x_o - y_otan\theta)cos\theta
     = x_ocos\theta - y_osin\theta</script><script type="math/tex; mode=display">
 y_r = x_rtan\theta + y_o/cos\theta 
-    = x_osin\theta + y_ocos\theta</script><p>平移（不属于线性变换）：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/204.png" alt=""> </p>
-<p>齐次坐标w：<br>点的w分量为1，向量的w分量为0。向量+向量=向量，点+向量=向量，点-点=向量，点+点=中点。仿射变换=线性变换+平移变换。加入齐次坐标后的部分仿射变换矩阵：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/205.png" alt=""> </p>
-<p>变换组合：<br>变换矩阵不可左右互换（<del>交换律</del>），矩阵从右往左应用（列向量），多个变换矩阵可提前相乘为一个变换矩阵（结合律）</p>
+    = x_osin\theta + y_ocos\theta</script><p>平移（不属于线性变换）：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/204.png" alt=""><br>齐次坐标w：<br>点的w分量为1，向量的w分量为0。向量+向量=向量，点+向量=向量，点-点=向量，点+点=中点。仿射变换=线性变换+平移变换。加入齐次坐标后的部分仿射变换矩阵：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/205.png" alt=""><br>变换组合：<br>变换矩阵不可左右互换（<del>交换律</del>），矩阵从右往左应用（列向量），多个变换矩阵可提前相乘为一个变换矩阵（结合律）</p>
 <h3 id="3D变换"><a href="#3D变换" class="headerlink" title="3D变换"></a>3D变换</h3><p>仿射变换通用矩阵：（表示<strong>先线性变换再平移</strong>）<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/206.png" alt=""><br>缩放：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/207.png" alt=""><br>平移：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/208.png" alt=""><br>旋转：<br>绕X/Y/Z轴旋转$\alpha$<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/209.png" alt=""><br>绕任意轴<strong>n</strong>旋转$\alpha$<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/210.png" alt=""> </p>
 <h2 id="观察变换（View-Transformation）"><a href="#观察变换（View-Transformation）" class="headerlink" title="观察变换（View Transformation）"></a>观察变换（View Transformation）</h2><p>世界空间（左） -&gt; 观察空间（右）（以摄像机为原点）<br>将物体和摄像机同步变换，直到摄像机到世界空间坐标原点，面向-Z<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/211.png" alt=""> </p>
+<script type="math/tex; mode=display">M_v = R_v * T_v</script><p><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/212.png" alt=""><br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/213.png" alt=""> </p>
+<h2 id="投影变换（Projection-Transformation）"><a href="#投影变换（Projection-Transformation）" class="headerlink" title="投影变换（Projection Transformation）"></a>投影变换（Projection Transformation）</h2><p>观察空间（右） -&gt; 裁剪空间（左）<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/214.png" alt=""> </p>
+<h3 id="正交投影"><a href="#正交投影" class="headerlink" title="正交投影"></a>正交投影</h3><p>先平移（中心-&gt;原点），再缩放（L/D/H-&gt;[-1,1]<sup>3</sup>(长宽高为2的正方体)）。<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/215.png" alt=""> </p>
+<ul>
+<li>摄像机方向为-Z -&gt; n&gt;f</li>
+<li>注意平台差异<h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3>各个领域中更普遍适用，近大远小，平行线不再平行。<br><strong>压缩至长方体</strong> -&gt; 平移 -&gt; 缩放 (参考正交投影)<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/216.png" alt=""><br>压缩推导过程：</li>
+</ul>
+<ol>
+<li><p>$\forall z$ 有 $x’=n/z<em>x$ 和 $y’=n/z</em>y$</p>
+<script type="math/tex; mode=display">M_p \begin{bmatrix}x \\ y \\ z \\ 1 \end{bmatrix} = \begin{bmatrix}x' \\ y' \\ ? \\ 1 \end{bmatrix} = \begin{bmatrix}nx \\ ny \\ ? \\ z \end{bmatrix}(同乘z，w只与z有关)</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">M_p =  \begin{bmatrix}n & 0 & 0 & 0 \\ 
+                         0 & n & 0 & 0 \\
+                         ? & ? & ? & ? \\ 
+                         0 & 0 & 1 & 0 \end{bmatrix}</script></li>
+<li><p>近平面上的点不变（近平面距摄像机n）</p>
+<script type="math/tex; mode=display">M_p \begin{bmatrix}x \\ y \\ n \\ 1 \end{bmatrix} = \begin{bmatrix}x \\ y \\ n \\ 1 \end{bmatrix} = \begin{bmatrix}nx \\ ny \\ n^2 \\ n \end{bmatrix}(n^2与xy无关)</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">M_p =  \begin{bmatrix}n & 0 & 0 & 0 \\ 
+                         0 & n & 0 & 0 \\
+                         0 & 0 & A & B \\ 
+                         0 & 0 & 1 & 0 \end{bmatrix}</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">An+B=b^2 \tag{1}</script></li>
+<li><p>远平面上点的Z值不变，取点（0,0,f,1）</p>
+<script type="math/tex; mode=display">\begin{bmatrix}n & 0 & 0 & 0 \\ 
+                 0 & n & 0 & 0 \\
+                 0 & 0 & A & B \\ 
+                 0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix}0 \\ 0 \\ f \\ 1 \end{bmatrix} = \begin{bmatrix}0 \\ 0 \\ f^2 \\ f \end{bmatrix}</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">Af+B=f^2 \tag{2}</script></li>
+</ol>
+<p>$(1)(2)联立，可得A=n+f,B=-nf$   </p>
 ]]></content>
       <tags>
         <tag>GAMES101</tag>
