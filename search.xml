@@ -22,6 +22,14 @@
       </tags>
   </entry>
   <entry>
+    <title>光栅化</title>
+    <url>/2023/09/21/GAMES101-3/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>GAMES101</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>空间变换（Transformation）</title>
     <url>/2023/09/20/GAMES101-2/</url>
     <content><![CDATA[<h2 id="模型变换（Model-Transformation）"><a href="#模型变换（Model-Transformation）" class="headerlink" title="模型变换（Model Transformation）"></a>模型变换（Model Transformation）</h2><p>（以Unity为例）模型空间（左） -&gt; 世界空间（左）</p>
@@ -43,8 +51,7 @@ y_r = x_rtan\theta + y_o/cos\theta
 </ul>
 <h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3><p>各个领域中更普遍适用，近大远小，平行线不再平行。<br><strong>压缩至长方体</strong> -&gt; 平移 -&gt; 缩放 (参考正交投影)<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/216.png" alt=""><br>压缩推导过程：</p>
 <ol>
-<li><p>$\forall z 有 x’=n/z<em>x 和 y’=n/z</em>y$</p>
-<script type="math/tex; mode=display">M_p \begin{bmatrix}x \\ y \\ z \\ 1 \end{bmatrix} = \begin{bmatrix}x' \\ y' \\ ? \\ 1 \end{bmatrix} = \begin{bmatrix}nx \\ ny \\ ? \\ z \end{bmatrix}(同乘z，w只与z有关)</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">M_p =  \begin{bmatrix}n & 0 & 0 & 0 \\ 
+<li><script type="math/tex; mode=display">\forall z 有 x'=n/z*x 和 y'=n/z*y</script><script type="math/tex; mode=display">M_p \begin{bmatrix}x \\ y \\ z \\ 1 \end{bmatrix} = \begin{bmatrix}x' \\ y' \\ ? \\ 1 \end{bmatrix} = \begin{bmatrix}nx \\ ny \\ ? \\ z \end{bmatrix}(同乘z，w只与z有关)</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">M_p =  \begin{bmatrix}n & 0 & 0 & 0 \\ 
                          0 & n & 0 & 0 \\
                          ? & ? & ? & ? \\ 
                          0 & 0 & 1 & 0 \end{bmatrix}</script></li>
@@ -59,7 +66,8 @@ y_r = x_rtan\theta + y_o/cos\theta
                  0 & 0 & A & B \\ 
                  0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix}0 \\ 0 \\ f \\ 1 \end{bmatrix} = \begin{bmatrix}0 \\ 0 \\ f^2 \\ f \end{bmatrix}</script><script type="math/tex; mode=display">\Downarrow</script><script type="math/tex; mode=display">Af+B=f^2 \tag{2}</script></li>
 </ol>
-<p>$(1)(2)联立，可得A=n+f,B=-nf$<br>Asepct ratio和Fov转为lrbt：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/217.png" alt=""><br>假设对称，l = -r，b = -t。非对称时为 $(t-b)/2|n|$ 和 $(r-l)/(t-b)$</p>
+<p>$(1)(2)联立，可得A=n+f,B=-nf$</p>
+<p>Asepct ratio和Fov转为lrbt：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/217.png" alt=""><br>假设对称，l = -r，b = -t。非对称时为 $(t-b)/2|n|$ 和 $(r-l)/(t-b)$</p>
 <h2 id="屏幕映射"><a href="#屏幕映射" class="headerlink" title="屏幕映射"></a>屏幕映射</h2><p>NDC -&gt; 屏幕空间（左）<br>屏幕：像素的数组，数组的规模就是分辨率。屏幕的范围是$(0,0)到(width,height)$<br>像素：可近似的认为是一个有着统一颜色的方块。像素的坐标均为整数，从$(0,0)到(width-1,height-1)$。像素点$(x,y)$的中心是$(x+0.5,y+0.5)$。</p>
 <p><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/218.png" alt=""><br>标准的立方体映射到屏幕：</p>
 <ol>
@@ -68,14 +76,6 @@ y_r = x_rtan\theta + y_o/cos\theta
 <li>视口转换矩阵：<br><img src="https://raw.githubusercontent.com/nominaboy/BlogPictures/master/games101/219.png" alt=""> </li>
 </ol>
 ]]></content>
-      <tags>
-        <tag>GAMES101</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>光栅化</title>
-    <url>/2023/09/21/GAMES101-3/</url>
-    <content><![CDATA[]]></content>
       <tags>
         <tag>GAMES101</tag>
       </tags>
